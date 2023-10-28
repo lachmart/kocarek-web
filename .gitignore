@@ -3,3 +3,4 @@ temp/
 log/
 vendor/
 www/node_modules/
+.idea/
