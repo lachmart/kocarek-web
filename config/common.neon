@@ -19,3 +19,43 @@ di:
 	export:
 		parameters: no
 		tags: no
+
+extensions:
+    nettrine.annotations: Nettrine\Annotations\DI\AnnotationsExtension
+    console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
+    nettrine.dbal: Nettrine\DBAL\DI\DbalExtension
+    nettrine.orm: Nettrine\ORM\DI\OrmExtension
+    nettrine.orm.console: Nettrine\ORM\DI\OrmConsoleExtension(%consoleMode%)
+    nettrine.cache: Nettrine\Cache\DI\CacheExtension
+    nettrine.orm.attributes: Nettrine\ORM\DI\OrmAttributesExtension
+
+nettrine.dbal:
+    debug:
+        panel: %debugMode%
+    connection:
+        driver: %database.driver%
+        host: %database.host%
+        user: %database.user%
+        password: %database.password%
+        dbname: %database.dbname%
+
+nettrine.orm:
+    entityManagerDecoratorClass: App\Entity\EntityManager
+    configuration:
+        autoGenerateProxyClasses: %debugMode%
+
+nettrine.orm.attributes:
+    mapping:
+        App\Entity: %appDir%
+
+decorator:
+    Doctrine\Common\EventSubscriber:
+        tags: [nettrine.subscriber]
+
+search:
+    services:
+        in: %appDir%/Services
+        classes:
+            - *
+    forms:
+        in: %appDir%/Form
