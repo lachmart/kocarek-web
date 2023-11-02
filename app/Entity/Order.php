@@ -6,6 +6,7 @@ use App\Entity\Attributes\TTitle;
 use App\Entity\Attributes\TActive;
 use App\Entity\Attributes\TId;
 use App\Entity\Attributes\TSequence;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\ManyToOne;
@@ -18,6 +19,9 @@ class Order
     use TTitle;
     use TActive;
     use TSequence;
+
+    #[Column(type: 'datetime', nullable:true)]
+    protected ?DateTime $createdAt = null;
 
     #[Column(type: 'string', nullable: true, options: ['default' => null])]
     protected ?string $email = null;
@@ -90,6 +94,16 @@ class Order
     public function setSize(?string $size): void
     {
         $this->size = $size;
+    }
+
+    public function getCreatedAt(): ?DateTime
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(?DateTime $createdAt): void
+    {
+        $this->createdAt = $createdAt;
     }
 
 }

@@ -75,6 +75,7 @@ class OrderFormFactory
         $order->setPhone($values->phone);
         $order->setPacketery($values->packetery);
         $order->setNote($values->note);
+        $order->setCreatedAt(new \DateTime());
         $this->orderService->persist($order);
 
         $presenter->flashMessage('Paráda, pásek ti blokujeme. E-mailem ti potvrdíme objednávku a pošleme platební údaje.', 'danger');

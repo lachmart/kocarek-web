@@ -29,7 +29,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <link href="../dist/output.css" rel="stylesheet">
+    <link href="../dist/output.css?v=2" rel="stylesheet">
     <title>{ifset title}{include title|stripHtml} | {/ifset}Svítící kočárek</title>
 </head>
 
@@ -91,32 +91,24 @@
 </header>
 {include content}
 
-
-<div n:foreach="$flashes as $flash" class="transition transform fixed z-100 bottom-0 inset-x-0 pb-2 sm:pb-5 opacity-100 scale-100 translate-y-0 ease-out duration-500" id="alert">
-    <div class="max-w-screen-xl mx-auto px-2 sm:px-4">
-        <div class="p-2 rounded-lg bg-gray-900 shadow-lg sm:p-3">
-            <div class="flex items-center justify-between flex-wrap">
-                <div class="w-0 flex-1 flex items-center">
-                    <p class="ml-3 font-medium text-white truncate"><span class="">{$flash->message}</span><span
-                                class="hidden lg:inline text-gray-400"><strong
-                                    class="text-white font-semibold mr-1">{$flash->message}</strong></span>
-                    </p>
-                </div>
-                <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-2">
-                    <button type="button"
-                            class="-mr-1 flex p-2 rounded-md hover:bg-gray-800 focus:outline-none focus:bg-gray-800"
-                            aria-label="Hide banner" id="hide-button">
-                        <svg class="h-6 w-6 text-white" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
+<div n:foreach="$flashes as $flash" class="fixed z-50 inset-0 flex items-center justify-center bg-black bg-opacity-50" id="alert">
+        <div class="absolute bg-gray-900 max-w-screen-xl mx-auto p-2 sm:p-4 rounded-lg shadow-lg w-full sm:w-auto">
+            <div class="p-2 sm:p-3">
+                <div class="flex items-center justify-between">
+                    <div class="flex-1 flex items-center">
+                        <p class="font-medium text-white">{$flash->message}</p>
+                    </div>
+                    <div class="ml-2">
+                        <button type="button" class="flex p-2 rounded-md hover-bg-gray-800 focus:outline-none focus-bg-gray-800" aria-label="Hide banner" id="hide-button">
+                            <svg class="h-6 w-6 text-white" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </div>
-
 
 <script>
     // Function to hide the alert
@@ -129,7 +121,7 @@
     document.getElementById('hide-button').addEventListener('click', hideAlert);
 
     // Set a timer to hide the alert after a certain time (e.g., 5000 milliseconds)
-    setTimeout(hideAlert, 5000);
+    setTimeout(hideAlert, 10000);
 </script>
 
 
