@@ -1,6 +1,23 @@
 <!doctype html>
 <html lang="cs">
 <head>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        // Set default consent to 'denied' as a placeholder
+        // Determine actual values based on your own requirements
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied'
+        });
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQCK2FFKY2"></script>
     <script>
@@ -11,7 +28,6 @@
         }
 
         gtag('js', new Date());
-
         gtag('config', 'G-FQCK2FFKY2');
     </script>
     <meta charset="UTF-8">
@@ -29,6 +45,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <link href="../dist/cookiesconsent.theme-dark.css" rel="stylesheet">
+    <link href="../dist/cookiesconsent.min.css" rel="stylesheet">
     <link href="../dist/output.css?v=2" rel="stylesheet">
     <title>{ifset title}{include title|stripHtml} | {/ifset}Svítící kočárek</title>
 </head>
@@ -91,7 +109,9 @@
 </header>
 {include content}
 
-<div n:foreach="$flashes as $flash" class="fixed z-50 inset-0 flex items-center justify-center bg-black bg-opacity-50" id="alert">
+
+<div n:foreach="$flashes as $flash" class="fixed z-50 inset-0 flex items-center justify-center bg-black bg-opacity-50"
+                                    id="alert">
         <div class="absolute bg-gray-900 max-w-screen-xl mx-auto p-2 sm:p-4 rounded-lg shadow-lg w-full sm:w-auto">
             <div class="p-2 sm:p-3">
                 <div class="flex items-center justify-between">
@@ -99,9 +119,12 @@
                         <p class="font-medium text-white">{$flash->message}</p>
                     </div>
                     <div class="ml-2">
-                        <button type="button" class="flex p-2 rounded-md hover-bg-gray-800 focus:outline-none focus-bg-gray-800" aria-label="Hide banner" id="hide-button">
+                        <button type="button"
+                                class="flex p-2 rounded-md hover-bg-gray-800 focus:outline-none focus-bg-gray-800"
+                                aria-label="Hide banner" id="hide-button">
                             <svg class="h-6 w-6 text-white" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
                         </button>
                     </div>
@@ -110,19 +133,26 @@
         </div>
 </div>
 
+
 <script>
     // Function to hide the alert
     function hideAlert() {
         const alert = document.getElementById('alert');
-        alert.style.display = 'none';
+        if (alert) {
+            alert.style.display = 'none';
+        }
     }
 
     // Add a click event listener to the hide button
-    document.getElementById('hide-button').addEventListener('click', hideAlert);
+    let hideButton = document.getElementById('hide-button');
+    if (hideButton)
+        hideButton.addEventListener('click', hideAlert);
 
     // Set a timer to hide the alert after a certain time (e.g., 5000 milliseconds)
     setTimeout(hideAlert, 10000);
 </script>
+
+
 
 
 <footer class="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800" id="footer">
@@ -142,8 +172,99 @@
             <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">{date('Y')} - <a href="/"
                                                                                                    class="hover:underline">Svítící kočárek</a></span>
         </div>
-	</footer>
-	{block scripts}
+</footer>
+{block scripts}
+    <script src="../dist/cookiesconsent.min.js"></script>
+    <script>
+        const header_content = "<h2>Nastavení cookies</h2><p>Můžete vybrat, které cookies nám povolíte využívat.</p>"
+
+        // const footer_content = "<p>Lorem ipsum dolor sit amet consectetur adipiscing elit metus facilisis sociis, venenatis pretium quam cubilia feugiat erat luctus interdum sem, praesent massa magnis volutpat leo dui velit dis torquent.</p>"
+        const cc = CookiesConsentJS({
+            expirationDays: 365,
+            position: "bottom",
+            buttons: ["settings", "reject", "accept"],
+            content: {
+                title: "Důležité informace",
+                message: "<h2>Informace o nákupu</h2><p>Plaba převodem, na základě platebních údajů poslaných e-mailem po objednání.<br> zásilky posíláme zásilkovnou.</p><h2>Používáme cookies!</h2><p>Díky nim můžeme analyzovat provoz webu, zlepšovat jeho funkce, výkon a použitelnost. Souhlasem nám umožníte využívat cookies od Google. <a href=\"https://policies.google.com/technologies/cookies\">Více informací</a></p>",
+                // policy: "Privacy Policy",
+                // policyLink: "https://gdpr-info.eu/",
+                btnAccept: "Souhlasím s cookies",
+                btnReject: "Odmítám cookies",
+                btnSettings: "Nastavení cookies",
+                btnSettingsSelectAll: "Vybrat vše",
+                btnSettingsAccept: "Potvrdit výběr",
+                settingsHeader: header_content,
+                // settingsFooter: footer_content
+            },
+            cookies: {
+                system: {
+                    name: "system",
+                    title: "Systémové cookies",
+                    description: "<p>Nezbytné pro zobrazení webu.</p>",
+                    checked: true,
+                    disabled: true,
+                },
+                statistics: {
+                    name: "analytics",
+                    title: "Analytické cookies",
+                    description: "<p>Pomáhají nám pochopit, jak web používáte. S jejich pomocí ho můžeme zlepšovat.</p>",
+                },
+                personalization: {
+                    name: "personalization",
+                    title: "Marketingové cookies",
+                    description: "<p>Pomáhají s cílením reklamy.</p>",
+                },
+            },
+            callback: {
+                accept: "consentGranted",  // after clicking accept all and accept settings buttons
+                reject: "consentRejected",  // after clicking reject all button
+                load: "checkServices",  // every time the user accesses to the page (except the first time)
+            }
+        });
+
+        function consentGranted() {
+            gtag('consent', 'update', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted'
+            });
+        }
+
+        function consentRejected() {
+            gtag('consent', 'update', {
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied'
+            });
+        }
+
+        function checkServices(params = "") {
+            if (params.hasOwnProperty("analytics") && params.analytics)
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+            else
+                gtag('consent', 'update', {
+                    'analytics_storage': 'denied'
+                });
+
+            if (params.hasOwnProperty("personalization") && params.personalization)
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted',
+                });
+            else
+                gtag('consent', 'update', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                });
+        }
+
+    </script>
     <script src="../node_modules\flowbite\dist/flowbite.min.js"></script>
     <script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
 {/block}
