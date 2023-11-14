@@ -8,6 +8,7 @@ use App\Services\OrderService;
 use App\Services\ProductService;
 use Nette\Application\UI\Form;
 use Nette\Mail\Mailer;
+use Nette\Mail\Message;
 
 class OrderFormFactory
 {
@@ -15,6 +16,7 @@ class OrderFormFactory
     public function __construct(
         private readonly ProductService $productService,
         private readonly OrderService $orderService,
+        private readonly Mailer $smtpMailer,
         Mailer                        $mailer,
     )
     {
@@ -77,6 +79,13 @@ class OrderFormFactory
         $order->setNote($values->note);
         $order->setCreatedAt(new \DateTime());
         $this->orderService->persist($order);
+
+        $mail = new Message;
+        $mail->setFrom('Sviticikocarek.cz <chci@sviticikocarek.cz>')
+            ->addTo('lachmart@gmail.com')
+            ->setSubject('Nová objednávka')
+            ->setBody("Nová objednávka!.");
+        $this->smtpMailer->send($mail);
 
         $presenter->flashMessage('Paráda, pásek ti blokujeme. E-mailem ti potvrdíme objednávku a pošleme platební údaje.', 'danger');
         $presenter->redirect('this');
