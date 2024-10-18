@@ -22,9 +22,9 @@
         </div>
 
         <!-- Product info -->
-        <div class="mx-auto max-w-2xl px-4 pb-16 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
+        <div class="mx-auto max-w-2xl px-4 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pt-16">
             <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-                <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Svítící kočárek - LED pásek</h1>
+                <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Svítící kočárek - LED pásek original</h1>
             </div>
             {*            <div class="mt-4 lg:row-span-3 lg:mt-0">*}
             {*                <p class="text-3xl tracking-tight text-gray-900">1299 Kč</p>*}
@@ -73,7 +73,7 @@
                         </div>
 
                         <fieldset class="mt-4">
-                            <legend class="sr-only">Vyberte velikost</legend>
+                            <legend class="sr-only">Vyberte obvod kočárku (přibližně)</legend>
                             <div class="grid grid-cols-4 gap-4 sm:grid-cols-8 lg:grid-cols-4">
                                 {foreach $form[size]->getItems() as $key => $label}
                                     <!-- Active: "ring-2 ring-indigo-500" -->
@@ -119,12 +119,12 @@
             {else}
                 <div class="mt-4 lg:row-span-3 lg:mt-0">
                     <p class="text-3xl tracking-tight text-gray-900">To bylo rychlé!</p>
-                    <p class="text-3xl tracking-tight text-gray-400 ">Další pásky teď nemáme na skladě. </p>
+                    <p class="text-3xl tracking-tight text-gray-400 ">Další pásky teď nemáme na skladě. Pokud máte zájem, můžeme se domluvit na mailu <a href="mailto:chci@sviticikocarek.cz">chci@sviticikocarek.cz</a></p>
                 </div>
             {/if}
             </div>
 
-            <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
+            <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pr-8 lg:pt-6">
                 <!-- Description and details -->
                 <div>
                     <h3 class="sr-only">Popis</h3>
@@ -138,7 +138,7 @@
                 </div>
 
                 <div class="mt-10">
-                    <h3 class="text-sm font-medium text-gray-900">Výhody</h3>
+                    <h3 class="text-sm font-medium text-gray-900">Vlastnosti</h3>
 
                     <div class="mt-4">
                         <ul role="list" class="list-disc space-y-2 pl-4 text-sm">
@@ -146,6 +146,7 @@
                                         class="text-gray-600">lepší viditelnost, bezpečnost a styl</span></li>
                             <li class="text-gray-400"><span class="text-gray-600">4 stupně intenzity</span></li>
                             <li class="text-gray-400"><span class="text-gray-600">barevné pohyblivé efekty</span></li>
+                            <li class="text-gray-400"><span class="text-gray-600">ovládání jedním tlačítkem</span></li>
                             <li class="text-gray-400"><span class="text-gray-600">usb c</span></li>
                             <li class="text-gray-400"><span
                                         class="text-gray-600">paměť posledního použitého režimu</span></li>
@@ -160,24 +161,18 @@
                         <ul role="list" class="list-disc space-y-2 pl-4 text-sm">
                             <li class="text-gray-400"><span
                                         class="text-gray-600">bílý, nebo černý pásek vyrobený na míru</span></li>
-                            <li class="text-gray-400"><span class="text-gray-600">2x spojovací díl (navržen jako nejslabší článek, který povolí dřív než citlivé komponenty)</span>
+                            <li class="text-gray-400"><span class="text-gray-600">spojovací suchý zip</span>
                             </li>
                             <li class="text-gray-400"><span class="text-gray-600">kabel pro připojení k power bance (usb A -> usb c)</span>
+                            </li>
+                            <li class="text-gray-400"><span class="text-gray-600">návod (<a href="/navod-original.pdf" target="_blank">pdf</a>) </span>
                             </li>
                         </ul>
                     </div>
                 </div>
-
-                {* <div class="mt-10">
-                <h2 class="text-sm font-medium text-gray-900">Podrobný popis</h2>
-
-                <div class="mt-4 space-y-6">
-                    <p class="text-sm text-gray-600">The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming &quot;Charcoal Gray&quot; limited release.</p>
-                </div> *}
             </div>
         </div>
     </div>
-
     <!-- Image gallery -->
     <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
         <div class="mt-6 aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
@@ -190,17 +185,144 @@
             <img src="/images/pafca.jpg" alt="" class="h-full w-full object-cover object-center">
         </div>
     </div>
-    <div class="mx-auto max-w-2xl lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-        <div class=" mt-6 aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
-            <img src="/images/wd2.jpg" alt="" class="h-full w-full object-cover object-center">
-        </div>
-        <div class=" mt-6 aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
-            <img src="/images/bd3.jpg" alt="" class="h-full w-full object-cover object-center">
-        </div>
-        <div class=" mt-6 aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
-            <img src="/images/wd3.jpg" alt="" class="h-full w-full object-cover object-center">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6" id="faq">
+        <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Otázky</h2>
+        <div class="grid pt-8 text-left border-t border-gray-200 md:gap-16 dark:border-gray-700 md:grid-cols-2">
+            <div>
+                <div class="mb-10">
+                    <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                        <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                        Jak moc to svítí?
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400">Připravujeme porovnání, kde by svítivost mohla být
+                        vidět. Zatím musí stačit moje slovo, že to funguje. A mám taky přirovnání. Světlo bílé varianty
+                        je výrazně vidět, i za jasného dne. V noci neoslňuje, ale dokáže osvětlit místnost. Při nočních
+                        procházkách ho nepoužívám na nejsilnější režim. Černá varianta je o poznání tmavší. Černá barva
+                        a světlo moc nejdou dohromady. V noci je vidět pěkně, ve dne spíš ne. Taky není moc použitelná
+                        na svícení. Maximální režim černé varianty svítí zhruba stejně jako nejslabší režim bílé. Ale podle mojí ženy vypadá černá varianta líp.</p>
+                </div>
+                <div class="mb-10">
+                    <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                        <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                        Bude to pasovat na můj kočárek?
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400">Pravděpodobně. Ale každý kočárek je jiný a je možné, že
+                        to bude potřeba trochu přemlouvání. Jako test doporučuji uvázat provázek kolem korbičky. Pokud
+                        bude držet, je velká pravděpodobnost, že to bude fungovat. Provázek pak můžete rozstřihnout a
+                        změřením zjistit ideální velikost pásku.</p>
+                    <p class="text-gray-500 dark:text-gray-400">Problém je hlavně s pevnými skořepinami, na kterých se
+                        silikonový pásek neudrží a padá. Jde to vyřešit například oboustranou lepicí páskou.</p>
+                </div>
+                <div class="mb-10">
+                    <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                        <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                        Proč to v sobě nemá baterku jako levnější výrobky?
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400">Svítící kočárek musí být připojený k powerbance. Je
+                        totiž větší než blikačky a tak má větší spotřebu. Pro praktickou výdrž by musela být baterie
+                        neprakticky velká. Ostatně stejný systém zvolilo Thule u osvětlení vozíků Chariot.</p>
+                    <p class="text-gray-500 dark:text-gray-400">Kočárek zaparkovaný ve sklepě se špatně nabíjí. Baterie
+                        nejsou ekologické, ani moc bezpečné. Rády časem degradují.</p>
+                    <p class="text-gray-500 dark:text-gray-400">Díky napájení powerbankou jsou baterie dál od dítěte. Každý může zvolit kapacitu powerbanky podle potřeby, nebo
+                        použít nějakou co už se válí doma. Po odpojení můžu nabíjet powerbanku kde chci. Životnost
+                        výrobku není omezena životností baterie. A hlavně si v nouzi můžu nabít mobil.</p>
+                </div>
+
+            </div>
+            <div>
+                <div class="mb-10">
+                    <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                        <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                        Černá, nebo bílá?
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400">Černou ber, pokud jsi noční tvor, chceš být vidět, jde
+                        ti o styl a barevně se ti bílá nehodí. Bílá je zářivější a můžeš si i posvítit. Uděláš s ní
+                        parádu v noci i ve dne.</p>
+                </div>
+                <div class="mb-10">
+                    <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                        <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                        Po chvíli se mi to vypne a už nesvítí. Co s tím?
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400">Tohle bývá nejčastěji způsobené power bankou. Pokud
+                        má malý odběr, myslí si že nic nedělá. Aby se zbytečně nevybíjela, tak se automaticky vypne.
+                        Problém bývá, když se svítí málo - nějaký problikávací režim na malou svítívost.</p>
+                    <p class="text-gray-500 dark:text-gray-400">Řešení je svítit víc - zesílit jas. Některé power banky
+                        jdou přepnout do režimu nabíjení zařízení s nízkým odběrem (hodiny, sluchátka). Pomáhá taky
+                        rozsvítit světlo na power bance, nebo k ní připojit další zařízení.</p>
+                </div>
+                <div class="mb-10">
+                    <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                        <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                        Jak to zapnu a vypnu?
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400">Kvůli chování power bank (které jsou primárně pro
+                        nabíjení, viz výše) není na přístroji žádný vypínač. Zapíná se připojením k napájení. Tzn.
+                        zapojením do power banky a zapnutím power banky. </p>
+                    <p class="text-gray-500 dark:text-gray-400">Vypnutí zase odpojením od power banky (vytažením
+                        kabelu).</p>
+                    <p class="text-gray-500 dark:text-gray-400"> Mám i kabely s vypínačem a můžu je poslat místo
+                        obyčejného kabelu. Problém je, že se mi moc neosvědčily, protože po vypnutí bývá složité vše
+                        zapnout - vypínač, i power banku. Někomu to ale může vyhovovat.</p>
+                </div>
+                <div class="mb-10">
+                    <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                        <svg class="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
+                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                        Není to zbytečně drahé?
+                    </h3>
+                    <p class="text-gray-500 dark:text-gray-400">Možná. Ale levněji to neumím. Jde o ruční výrobek, který dávám dohromady sám. Vývoj i výroba zabírá čas. Součástky stojí peníze. </p>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Image gallery -->
+{*    <div class="mx-auto max-w-2xl lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">*}
+{*        <div class=" mt-6 aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">*}
+{*            <img src="/images/wd2.jpg" alt="" class="h-full w-full object-cover object-center">*}
+{*        </div>*}
+{*        <div class=" mt-6 aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">*}
+{*            <img src="/images/bd3.jpg" alt="" class="h-full w-full object-cover object-center">*}
+{*        </div>*}
+{*        <div class=" mt-6 aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">*}
+{*            <img src="/images/wd3.jpg" alt="" class="h-full w-full object-cover object-center">*}
+{*        </div>*}
+{*    </div>*}
     <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
         <div class="mt-6 aspect-h-5 aspect-w-4 lg:aspect-h-4 lg:aspect-w-3 sm:overflow-hidden sm:rounded-lg">
             <img src="/images/bd2.jpg" alt="" class="h-full w-full object-cover object-center">
@@ -234,7 +356,7 @@
             <img src="/images/svitici_kocarek19.jpg" alt="" class="h-full w-full object-cover object-center">
         </div>
     </div>
-</div>
+
 </div>
 
 <script>
