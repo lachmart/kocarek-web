@@ -16,6 +16,7 @@ final class RouterFactory
 	{
 		$router = new RouteList;
 		$router->addRoute('pasek', 'Product:default');
+		$router->addRoute('historie', 'Product:about');
 		$router->addRoute('<presenter>/<action>[/<id>]', 'Home:default');
 		return $router;
 	}
