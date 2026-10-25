@@ -5,3 +5,5 @@ vendor/
 www/node_modules/
 .idea/
 .rnd
+# local secrets and data, never commit
+config/production.local.neon
